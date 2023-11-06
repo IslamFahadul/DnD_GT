@@ -1,29 +1,12 @@
-import {
-  DndContext,
-  closestCenter,
-  MouseSensor,
-  TouchSensor,
-  DragOverlay,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
+import {DndContext, closestCenter, MouseSensor, TouchSensor, DragOverlay, useSensor, useSensors} from "@dnd-kit/core";
 import { arrayMove, SortableContext, rectSortingStrategy } from "@dnd-kit/sortable";
 import { Grid } from "../Sections/GridSection";
 import { SortFunctionality } from "./SortFunctionality";
 import { Image } from "../Resources/Image";
 
-export default function GridFunctionality({
-  items,
-  setItems,
-  activeId,
-  setActiveId,
-  selected,
-  handleCheck,
-  isCheck,
-  handleFileChange,
-}) {
+export default function GridFunctionality({items, setItems, activeId, setActiveId, selected, handleCheck, isCheck, handleFileChange}) {
+  
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
-
   const handleDragStart = (event) => {
     setActiveId(event.active.id);
   };
